@@ -24,7 +24,22 @@ const About = () => {
           <Heading size="3xl" color="white" fontWeight="800">
             ABOUT <span style={{ color: "#ffb400" }}>ME</span>
           </Heading>
-          <span className="title-bg">RESUME</span>
+          <span
+            style={{
+              fontSize: "110px",
+              letterSpacing: "10px",
+              lineHeight: "0.7",
+              position: "absolute",
+              left: "38%",
+              top: "6.5%",
+              textTransform: "uppercase",
+              fontWeight: "800",
+              transform: "translateY(-50%)",
+              color: "hsla(0,0%,100%,.07)",
+            }}
+          >
+            RESUME
+          </span>
         </Box>
         <Flex direction="row" align="center" justify="space-between">
           <Box flex="0 0 45%">
