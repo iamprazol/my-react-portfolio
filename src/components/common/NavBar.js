@@ -9,20 +9,30 @@ import IconContainer from "./IconContainer";
 
 const NavBar = () => {
   return (
-    <Flex direction="column" flex="0 0 15%">
+    <Flex direction="column" top="20%" position="fixed">
       <NavLink to="/">
-        <IconContainer icon={<CottageIcon style={{ color: "white" }} />} />
+        <IconContainer
+          icon={<CottageIcon style={{ color: "white" }} />}
+          margin={true}
+        />
       </NavLink>
       <NavLink to="/about">
-        <IconContainer icon={<PersonIcon style={{ color: "white" }} />} />
+        <IconContainer
+          icon={<PersonIcon style={{ color: "white" }} />}
+          margin={true}
+        />
       </NavLink>
       <NavLink to="/portfolio">
         <IconContainer
           icon={<BusinessCenterIcon style={{ color: "white" }} />}
+          margin={true}
         />
       </NavLink>
       <NavLink to="/contact">
-        <IconContainer icon={<DraftsIcon style={{ color: "white" }} />} />
+        <IconContainer
+          icon={<DraftsIcon style={{ color: "white" }} />}
+          margin={true}
+        />
       </NavLink>
     </Flex>
   );
