@@ -153,6 +153,7 @@ const About = () => {
                     <IconContainer
                       icon={<BusinessCenterIcon style={{ color: "white" }} />}
                       size="small"
+                      isActive={true}
                     />
                     <span
                       style={{
@@ -225,6 +226,7 @@ const About = () => {
                     <IconContainer
                       icon={<MenuBookIcon style={{ color: "white" }} />}
                       size="small"
+                      isActive={true}
                     />
                     <span
                       style={{
@@ -283,6 +285,7 @@ const About = () => {
                     <IconContainer
                       icon={<BusinessCenterIcon style={{ color: "white" }} />}
                       size="small"
+                      isActive={true}
                     />
                     <span
                       style={{
@@ -352,6 +355,7 @@ const About = () => {
                     <IconContainer
                       icon={<MenuBookIcon style={{ color: "white" }} />}
                       size="small"
+                      isActive={true}
                     />
                     <span
                       style={{
@@ -411,6 +415,7 @@ const About = () => {
                       <IconContainer
                         icon={<BusinessCenterIcon style={{ color: "white" }} />}
                         size="small"
+                        isActive={true}
                       />
                       <span
                         style={{
@@ -480,6 +485,7 @@ const About = () => {
                       <IconContainer
                         icon={<MenuBookIcon style={{ color: "white" }} />}
                         size="small"
+                        isActive={true}
                       />
                       <span
                         style={{

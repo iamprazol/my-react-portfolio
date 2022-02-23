@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import CottageIcon from "@mui/icons-material/Cottage";
@@ -8,30 +8,36 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import IconContainer from "./IconContainer";
 
 const NavBar = () => {
+  const [activeMenuItem, setActiveMenuItem] = useState("home");
+
   return (
     <Flex direction="column" top="20%" position="fixed">
-      <NavLink to="/">
+      <NavLink to="/" onClick={() => setActiveMenuItem("home")}>
         <IconContainer
           icon={<CottageIcon style={{ color: "white" }} />}
           margin={true}
+          isActive={"home" === activeMenuItem && true}
         />
       </NavLink>
-      <NavLink to="/about">
+      <NavLink to="/about" onClick={() => setActiveMenuItem("about")}>
         <IconContainer
           icon={<PersonIcon style={{ color: "white" }} />}
           margin={true}
+          isActive={"about" === activeMenuItem && true}
         />
       </NavLink>
-      <NavLink to="/portfolio">
+      <NavLink to="/portfolio" onClick={() => setActiveMenuItem("portfolio")}>
         <IconContainer
           icon={<BusinessCenterIcon style={{ color: "white" }} />}
           margin={true}
+          isActive={"portfolio" === activeMenuItem && true}
         />
       </NavLink>
-      <NavLink to="/contact">
+      <NavLink to="/contact" onClick={() => setActiveMenuItem("contact")}>
         <IconContainer
           icon={<DraftsIcon style={{ color: "white" }} />}
           margin={true}
+          isActive={"contact" === activeMenuItem && true}
         />
       </NavLink>
     </Flex>
