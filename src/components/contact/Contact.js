@@ -7,12 +7,11 @@ import {
   Text,
   Link,
   FormControl,
-  FormLabel,
-  FormHelperText,
   Input,
   Textarea,
   Button,
 } from "@chakra-ui/react";
+
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import MapIcon from "@mui/icons-material/Map";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
