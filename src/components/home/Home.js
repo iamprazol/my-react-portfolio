@@ -5,7 +5,13 @@ import myPic from "../../me.png";
 const Home = () => {
   return (
     <Fragment>
-      <Flex direction="column" flex="1" paddingLeft="150px">
+      <Flex
+        direction="column"
+        flex="1"
+        paddingLeft="150px"
+        minHeight="90vh"
+        justify="center"
+      >
         <Flex alignItems="center">
           <span
             style={{
