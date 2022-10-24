@@ -16,3 +16,7 @@ code {
 .chakra-text, .chakra-heading {
 	color: white;
 }
+
+.chakra-modal-1 {
+	background-color: #111;
+}
