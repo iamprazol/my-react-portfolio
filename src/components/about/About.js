@@ -15,10 +15,53 @@ import {
 import IconContainer from "../common/IconContainer";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import useWindowDimensions from "../helper/useWindowDimensions";
 
 const About = () => {
+  const BadgeIcon = ({ icon }) => {
+    return (
+      <Flex
+        direction="column"
+        flex="0 0 10%"
+        alignItems="center"
+        mr={3}
+        maxHeight="100%"
+      >
+        <IconContainer icon={icon} size="small" isActive={true} />
+        <span
+          style={{
+            height: useWindowDimensions().width > "1024" ? "100%" : "78%",
+            width: "1px",
+            borderRadius: "10px",
+            background: "white",
+            position: "relative",
+            opacity: 0.2,
+          }}
+        ></span>
+      </Flex>
+    );
+  };
+
+  const TimeLineBadge = ({ badgeText }) => {
+    return (
+      <Badge
+        fontWeight="600"
+        mb="12px"
+        style={{
+          opacity: 0.8,
+          borderRadius: "20px",
+          textAlign: "center",
+          padding: "1px 10px",
+          width: "125px",
+        }}
+      >
+        {badgeText}
+      </Badge>
+    );
+  };
+
   return (
-    <Stack flex="1" paddingLeft="150px">
+    <Stack flex="1" paddingLeft={{ base: "0px", lg: "150px" }}>
       <Flex direction="column" gap="120px">
         <Box display="flex" marginTop="70px" justifyContent="center">
           <Heading size="3xl" color="white" fontWeight="800">
@@ -30,8 +73,8 @@ const About = () => {
               letterSpacing: "10px",
               lineHeight: "0.7",
               position: "absolute",
-              left: "38%",
-              top: "6.5%",
+              left: useWindowDimensions().width > "1024" ? "38%" : "17%",
+              top: useWindowDimensions().width > "1024" ? "6.5%" : "6.8%",
               textTransform: "uppercase",
               fontWeight: "800",
               transform: "translateY(-50%)",
@@ -41,12 +84,54 @@ const About = () => {
             RESUME
           </span>
         </Box>
-        <Flex direction="row" align="center" justify="space-between">
-          <Box flex="0 0 45%">
-            <Heading size="lg" color="white" mb={5}>
+        <Flex
+          direction={{
+            base: "column",
+            "2xl": "row",
+            xl: "row",
+            lg: "row",
+            md: "column",
+            sm: "column",
+          }}
+          align="center"
+          justify="space-between"
+          gap={{
+            base: "25px",
+            "2xl": "0px",
+            xl: "0px",
+            lg: "0px",
+            md: "25px",
+            sm: "25px",
+          }}
+        >
+          <Box flex="0 0 50%">
+            <Heading
+              size="lg"
+              color="white"
+              mb={5}
+              textAlign={{
+                base: "center",
+                "2xl": "left",
+                xl: "left",
+                lg: "left",
+                md: "center",
+                sm: "center",
+              }}
+            >
               PERSONAL INFOS
             </Heading>
-            <Flex justify="space-between" align="center">
+            <Flex
+              justify="space-between"
+              align="center"
+              gap={{
+                base: "100px",
+                "2xl": "0px",
+                xl: "0px",
+                lg: "0px",
+                md: "100px",
+                sm: "100px",
+              }}
+            >
               <Flex direction="column">
                 <Text fontWeight="500" fontSize="15px">
                   <List spacing={5}>
@@ -81,7 +166,7 @@ const About = () => {
                     </ListItem>
                     <ListItem>
                       <span style={{ opacity: 0.8 }}>Phone:</span>{" "}
-                      +9779845690436
+                      +9779850690436
                     </ListItem>
                   </List>
                 </Text>
@@ -124,9 +209,9 @@ const About = () => {
             </Flex>
           </Box>
         </Flex>
-        <Box flex="0 0 45%">
+        <Box flex="0 0 50%">
           <Flex justify="center">
-            <Heading size="lg" color="white" mb="100px">
+            <Heading size="lg" color="white" mb={10}>
               MY SKILLS
             </Heading>
           </Flex>
@@ -135,6 +220,22 @@ const About = () => {
             align="center"
             flexWrap={"wrap"}
             justifyContent={"space-around"}
+            flexDirection={{
+              base: "column",
+              "2xl": "row",
+              xl: "row",
+              lg: "row",
+              md: "column",
+              sm: "column",
+            }}
+            gap={{
+              base: "25px",
+              "2xl": "0px",
+              xl: "0px",
+              lg: "0px",
+              md: "25px",
+              sm: "25px",
+            }}
           >
             <Box flex="0 0 50%">
               <Link href="https://github.com/iamprazol">
@@ -152,7 +253,17 @@ const About = () => {
                 />
               </Link>
             </Box>
-            <Box flex="0 0 50%" mt={10}>
+            <Box
+              flex="0 0 50%"
+              mt={{
+                base: "0px",
+                "2xl": "10px",
+                xl: "10px",
+                lg: "10px",
+                md: "0px",
+                sm: "0px",
+              }}
+            >
               <Link href="https://github.com/iamprazol">
                 <Image
                   align="center"
@@ -162,52 +273,43 @@ const About = () => {
             </Box>
           </Flex>
         </Box>
-        <Box flex="0 0 45%">
-          <Flex justify="center">
-            <Heading size="lg" color="white" mb={5}>
-              EXPERIENCE & EDUCATION
+        <Box flex="0 0 50%">
+          <Flex justify="center" mb={10}>
+            <Heading size="lg" color="white">
+              {useWindowDimensions().width > "1024"
+                ? `EXPERIENCE & EDUCATION`
+                : `EXPERIENCE`}
             </Heading>
           </Flex>
           <Flex justify="space-between" align="center">
-            <Flex direction="column">
-              <Flex flex="1 0 50%" direction="row">
-                <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                  <Flex
-                    direction="column"
-                    flex="0 0 10%"
-                    alignItems="center"
-                    mr={3}
-                  >
-                    <IconContainer
-                      icon={<BusinessCenterIcon style={{ color: "white" }} />}
-                      size="small"
-                      isActive={true}
-                    />
-                    <span
-                      style={{
-                        height: "170px",
-                        width: "1px",
-                        borderRadius: "10px",
-                        background: "white",
-                        position: "relative",
-                        opacity: 0.2,
-                      }}
-                    ></span>
-                  </Flex>
+            <Flex
+              flexDirection={{
+                base: "column",
+                "2xl": "row",
+                xl: "row",
+                lg: "column",
+                md: "column",
+                sm: "column",
+              }}
+            >
+              <Flex gap={10} direction="column">
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0rem",
+                    xl: "0rem",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<BusinessCenterIcon style={{ color: "white" }} />}
+                  />
                   <Flex direction="column" flex="0 0 90%">
-                    <Badge
-                      fontWeight="600"
-                      mb="12px"
-                      style={{
-                        opacity: 0.8,
-                        borderRadius: "20px",
-                        textAlign: "center",
-                        padding: "1px 10px",
-                        width: "20%",
-                      }}
-                    >
-                      2019 - PRESENT
-                    </Badge>
+                    <TimeLineBadge badgeText="2019 - PRESENT" />
                     <Flex align="baseline">
                       <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
                         WP PLUGIN TEAM LEAD -
@@ -244,102 +346,23 @@ const About = () => {
                     </UnorderedList>
                   </Flex>
                 </Flex>
-                <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                  <Flex
-                    direction="column"
-                    flex="0 0 10%"
-                    alignItems="center"
-                    mr={3}
-                  >
-                    <IconContainer
-                      icon={<MenuBookIcon style={{ color: "white" }} />}
-                      size="small"
-                      isActive={true}
-                    />
-                    <span
-                      style={{
-                        height: "170px",
-                        width: "1px",
-                        borderRadius: "10px",
-                        background: "white",
-                        position: "relative",
-                        opacity: 0.2,
-                      }}
-                    ></span>
-                  </Flex>
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0rem",
+                    xl: "0rem",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<BusinessCenterIcon style={{ color: "white" }} />}
+                  />
                   <Flex direction="column" flex="0 0 90%">
-                    <Badge
-                      fontWeight="600"
-                      mb="12px"
-                      style={{
-                        opacity: 0.8,
-                        borderRadius: "20px",
-                        textAlign: "center",
-                        padding: "1px 10px",
-                        width: "20%",
-                      }}
-                    >
-                      2015 - 2019
-                    </Badge>
-                    <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
-                        BACHLEORS IN COMPUTER ENGINEERING -
-                      </Heading>
-                      <Heading
-                        size="sm"
-                        fontWeight="600"
-                        style={{ opacity: 0.8 }}
-                        ml={1}
-                      >
-                        WRC
-                      </Heading>
-                    </Flex>
-                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
-                      From Western Regional Campus ( Pashchimanchal Engineering
-                      Campus ), Lamachaur-16, Pokhara, I completed my Bachleor
-                      in computer engineering degree.
-                    </Text>
-                  </Flex>
-                </Flex>
-              </Flex>
-              <Flex flex="1 0 50%" direction="row">
-                <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                  <Flex
-                    direction="column"
-                    flex="0 0 10%"
-                    alignItems="center"
-                    mr={3}
-                  >
-                    <IconContainer
-                      icon={<BusinessCenterIcon style={{ color: "white" }} />}
-                      size="small"
-                      isActive={true}
-                    />
-                    <span
-                      style={{
-                        height: "170px",
-                        width: "1px",
-                        borderRadius: "10px",
-                        background: "white",
-                        position: "relative",
-                        opacity: 0.2,
-                      }}
-                    ></span>
-                  </Flex>
-                  <Flex direction="column" flex="0 0 90%">
-                    <Badge
-                      fontWeight="600"
-                      mb="12px"
-                      style={{
-                        opacity: 0.8,
-                        borderRadius: "20px",
-                        textAlign: "center",
-                        padding: "1px 10px",
-                        width: "20%",
-                      }}
-                    >
-                      2019 - 2020
-                    </Badge>
+                    <TimeLineBadge badgeText="2019 - 2020" />
                     <Flex align="baseline">
                       <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
                         WP PLUGIN DEVELOPER -
@@ -373,43 +396,119 @@ const About = () => {
                     </UnorderedList>
                   </Flex>
                 </Flex>
-                <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                  <Flex
-                    direction="column"
-                    flex="0 0 10%"
-                    alignItems="center"
-                    mr={3}
-                  >
-                    <IconContainer
-                      icon={<MenuBookIcon style={{ color: "white" }} />}
-                      size="small"
-                      isActive={true}
-                    />
-                    <span
-                      style={{
-                        height: "170px",
-                        width: "1px",
-                        borderRadius: "10px",
-                        background: "white",
-                        position: "relative",
-                        opacity: 0.2,
-                      }}
-                    ></span>
-                  </Flex>
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0rem",
+                    xl: "0rem",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<BusinessCenterIcon style={{ color: "white" }} />}
+                  />
                   <Flex direction="column" flex="0 0 90%">
-                    <Badge
-                      fontWeight="600"
-                      mb="12px"
-                      style={{
-                        opacity: 0.8,
-                        borderRadius: "20px",
-                        textAlign: "center",
-                        padding: "1px 10px",
-                        width: "20%",
-                      }}
+                    <TimeLineBadge badgeText="2018 - 2019" />
+                    <Flex align="baseline">
+                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                        PHP WEB DEVELOPER -
+                      </Heading>
+                      <Heading
+                        size="sm"
+                        fontWeight="600"
+                        style={{ opacity: 0.8 }}
+                        ml={1}
+                      >
+                        INFOMAX
+                      </Heading>
+                    </Flex>
+                    <UnorderedList
+                      spacing={2}
+                      style={{ opacity: 0.8, fontSize: "14px" }}
+                      color="white"
                     >
-                      2013 - 2015
-                    </Badge>
+                      <ListItem>
+                        During the course of my employment at infomax i had some
+                        experience in developing web applications as well as
+                        developing web API for mobile applications by being a
+                        back-end developer in a team of tech enthusiasts.
+                      </ListItem>
+                      <ListItem>
+                        My day to day activities were working in team with front
+                        end developers, developing web Api in laravel for mobile
+                        applications and web applications and providing daily
+                        report about tasks performed.
+                      </ListItem>
+                    </UnorderedList>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Flex gap={10} direction="column">
+                {useWindowDimensions().width <= "1024" && (
+                  <Flex justify="center" mb={10} mt={20}>
+                    <Heading size="lg" color="white">
+                      EDUCATION
+                    </Heading>
+                  </Flex>
+                )}
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0px",
+                    xl: "0px",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<MenuBookIcon style={{ color: "white" }} />}
+                  />
+                  <Flex direction="column" flex="0 0 90%">
+                    <TimeLineBadge badgeText="2015 - 2019" />
+                    <Flex align="baseline">
+                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                        BACHLEORS IN COMPUTER ENGINEERING -
+                      </Heading>
+                      <Heading
+                        size="sm"
+                        fontWeight="600"
+                        style={{ opacity: 0.8 }}
+                        ml={1}
+                      >
+                        WRC
+                      </Heading>
+                    </Flex>
+                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
+                      From Western Regional Campus ( Pashchimanchal Engineering
+                      Campus ), Lamachaur-16, Pokhara, I completed my Bachleor
+                      in computer engineering degree.
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0rem",
+                    xl: "0rem",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<MenuBookIcon style={{ color: "white" }} />}
+                  />
+                  <Flex direction="column" flex="0 0 90%">
+                    <TimeLineBadge badgeText="2013 - 2015" />
                     <Flex align="baseline">
                       <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
                         HIGHER SECONDARY -
@@ -430,134 +529,40 @@ const About = () => {
                     </Text>
                   </Flex>
                 </Flex>
-              </Flex>
-              <Flex>
-                <Flex flex="1 0 50%" direction="row">
-                  <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                    <Flex
-                      direction="column"
-                      flex="0 0 10%"
-                      alignItems="center"
-                      mr={3}
-                    >
-                      <IconContainer
-                        icon={<BusinessCenterIcon style={{ color: "white" }} />}
-                        size="small"
-                        isActive={true}
-                      />
-                      <span
-                        style={{
-                          height: "170px",
-                          width: "1px",
-                          borderRadius: "10px",
-                          background: "white",
-                          position: "relative",
-                          opacity: 0.2,
-                        }}
-                      ></span>
-                    </Flex>
-                    <Flex direction="column" flex="0 0 90%">
-                      <Badge
+                <Flex
+                  direction="row"
+                  mt={{
+                    base: "2.5rem",
+                    "2xl": "0rem",
+                    xl: "0rem",
+                    lg: "2.5rem",
+                    md: "2.5rem",
+                    sm: "2.5rem",
+                  }}
+                  height="60vh"
+                >
+                  <BadgeIcon
+                    icon={<MenuBookIcon style={{ color: "white" }} />}
+                  />
+                  <Flex direction="column" flex="0 0 90%">
+                    <TimeLineBadge badgeText="2001 - 2012" />
+                    <Flex align="baseline">
+                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                        PRIMARY -
+                      </Heading>
+                      <Heading
+                        size="sm"
                         fontWeight="600"
-                        mb="12px"
-                        style={{
-                          opacity: 0.8,
-                          borderRadius: "20px",
-                          textAlign: "center",
-                          padding: "1px 10px",
-                          width: "20%",
-                        }}
+                        style={{ opacity: 0.8 }}
+                        ml={1}
                       >
-                        2018 - 2019
-                      </Badge>
-                      <Flex align="baseline">
-                        <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
-                          PHP WEB DEVELOPER -
-                        </Heading>
-                        <Heading
-                          size="sm"
-                          fontWeight="600"
-                          style={{ opacity: 0.8 }}
-                          ml={1}
-                        >
-                          INFOMAX
-                        </Heading>
-                      </Flex>
-                      <UnorderedList
-                        spacing={2}
-                        style={{ opacity: 0.8, fontSize: "14px" }}
-                        color="white"
-                      >
-                        <ListItem>
-                          During the course of my employment at infomax i had
-                          some experience in developing web applications as well
-                          as developing web API for mobile applications by being
-                          a back-end developer in a team of tech enthusiasts.
-                        </ListItem>
-                        <ListItem>
-                          My day to day activities were working in team with
-                          front end developers, developing web Api in laravel
-                          for mobile applications and web applications and
-                          providing daily report about tasks performed.
-                        </ListItem>
-                      </UnorderedList>
+                        HILL BIRD
+                      </Heading>
                     </Flex>
-                  </Flex>
-                  <Flex flex="1 0 50%" direction="row" mb={5} mt={10}>
-                    <Flex
-                      direction="column"
-                      flex="0 0 10%"
-                      alignItems="center"
-                      mr={3}
-                    >
-                      <IconContainer
-                        icon={<MenuBookIcon style={{ color: "white" }} />}
-                        size="small"
-                        isActive={true}
-                      />
-                      <span
-                        style={{
-                          height: "170px",
-                          width: "1px",
-                          borderRadius: "10px",
-                          background: "white",
-                          position: "relative",
-                          opacity: 0.2,
-                        }}
-                      ></span>
-                    </Flex>
-                    <Flex direction="column" flex="0 0 90%">
-                      <Badge
-                        fontWeight="600"
-                        mb="12px"
-                        style={{
-                          opacity: 0.8,
-                          borderRadius: "20px",
-                          textAlign: "center",
-                          padding: "1px 10px",
-                          width: "20%",
-                        }}
-                      >
-                        2001 - 2012
-                      </Badge>
-                      <Flex align="baseline">
-                        <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
-                          PRIMARY -
-                        </Heading>
-                        <Heading
-                          size="sm"
-                          fontWeight="600"
-                          style={{ opacity: 0.8 }}
-                          ml={1}
-                        >
-                          HILL BIRD
-                        </Heading>
-                      </Flex>
-                      <Text style={{ opacity: 0.8, fontSize: "14px" }}>
-                        From Hill Bird, Bharatpur-12, Chitwan, I completed my
-                        primary education degree.
-                      </Text>
-                    </Flex>
+                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
+                      From Hill Bird, Bharatpur-12, Chitwan, I completed my
+                      primary education degree.
+                    </Text>
                   </Flex>
                 </Flex>
               </Flex>
