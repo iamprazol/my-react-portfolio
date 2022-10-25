@@ -21,3 +21,7 @@ code {
 .chakra-modal__content {
 	background-color: #111 !important;
 }
+
+html {
+	background-color: #111 !important;
+}

@@ -22,6 +22,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import SendIcon from "@mui/icons-material/Send";
+import useWindowDimensions from "../helper/useWindowDimensions";
 
 const Contact = () => {
   const form = useRef();
@@ -62,15 +63,20 @@ const Contact = () => {
       );
   };
   return (
-    <Stack flex="1" paddingLeft="150px">
+    <Stack flex="1" paddingLeft={{ base: "0px", lg: "150px" }}>
       <Flex direction="column" gap="120px">
         <Box display="flex" marginTop="70px" justifyContent="center">
-          <Heading size="3xl" color="white" fontWeight="800" lineHeight={0.1}>
+          <Heading
+            size={useWindowDimensions().width > "425" ? "3xl" : "xl"}
+            color="white"
+            fontWeight="800"
+            lineHeight={0.1}
+          >
             GET IN <span style={{ color: "#ffb400" }}>TOUCH</span>
           </Heading>
           <span
             style={{
-              fontSize: "110px",
+              fontSize: useWindowDimensions().width > "425" ? "110px" : "50px",
               letterSpacing: "10px",
               lineHeight: "0.7",
               position: "absolute",
@@ -83,12 +89,33 @@ const Contact = () => {
           </span>
         </Box>
         <Box flex="0 0 45%">
-          <Flex justify="space-between" align="flex-start">
+          <Flex
+            justify="space-between"
+            direction={{
+              base: "column",
+              "2xl": "row",
+              xl: "row",
+              lg: "column",
+              md: "column",
+              sm: "column",
+            }}
+          >
             <Box flex="0 0 30%">
-              <Heading size="lg" fontWeight="500" mt={2} mb={2}>
+              <Heading
+                size={useWindowDimensions().width > "425" ? "lg" : "md"}
+                fontWeight="500"
+                mt={2}
+                mb={2}
+              >
                 DON'T BE SHY !
               </Heading>
-              <Text style={{ opacity: 0.8, fontSize: "16px" }}>
+              <Text
+                style={{
+                  opacity: 0.8,
+                  fontSize:
+                    useWindowDimensions().width > "425" ? "16px" : "14px",
+                }}
+              >
                 Feel free to get in touch with me. I am always open to
                 discussing new projects, creative ideas or opportunities to be
                 part of your visions.
@@ -98,13 +125,20 @@ const Contact = () => {
                   <MapIcon style={{ color: "#ffb400", fontSize: "40px" }} />
                   <Flex direction="column" ml={4}>
                     <Text
-                      fontSize="16px"
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
                     >
                       ADDRESS POINT
                     </Text>
-                    <Text fontSize="16px" fontWeight="500">
+                    <Text
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
+                      fontWeight="500"
+                    >
                       Bharatpur-12, Chitwan, Nepal
                     </Text>
                   </Flex>
@@ -115,13 +149,20 @@ const Contact = () => {
                   />
                   <Flex direction="column" ml={4}>
                     <Text
-                      fontSize="16px"
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
                     >
                       MAIL ME
                     </Text>
-                    <Text fontSize="16px" fontWeight="500">
+                    <Text
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
+                      fontWeight="500"
+                    >
                       iamprazol@gmail.com
                     </Text>
                   </Flex>
@@ -132,13 +173,20 @@ const Contact = () => {
                   />
                   <Flex direction="column" ml={4}>
                     <Text
-                      fontSize="16px"
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
                     >
                       CALL ME
                     </Text>
-                    <Text fontSize="16px" fontWeight="500">
+                    <Text
+                      fontSize={
+                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                      }
+                      fontWeight="500"
+                    >
                       +9779845690436
                     </Text>
                   </Flex>
@@ -224,14 +272,17 @@ const Contact = () => {
                   borderRadius="20px"
                   color="#ffb400"
                   fontWeight={500}
-                  height="60px"
-                  width="30%"
+                  height={useWindowDimensions().width > "425" ? "60px" : "40px"}
+                  width={useWindowDimensions().width > "425" ? "30%" : "55%"}
                   borderColor="#ffb400"
                   variant="outline"
                   rightIcon={<SendIcon />}
                   type={"submit"}
                   loadingText="Sending"
                   spinnerPlacement="start"
+                  fontSize={
+                    useWindowDimensions().width > "425" ? "16px" : "12px"
+                  }
                 >
                   SEND MESSAGE
                 </Button>
