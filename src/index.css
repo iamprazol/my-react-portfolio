@@ -17,6 +17,6 @@ code {
 	color: white;
 }
 
-.chakra-modal-1 {
-	background-color: #111;
+.chakra-modal__content {
+	background-color: #111 !important;
 }

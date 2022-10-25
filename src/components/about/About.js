@@ -130,9 +130,14 @@ const About = () => {
               MY SKILLS
             </Heading>
           </Flex>
-          <Flex justify="space-between" align="center">
+          <Flex
+            justify="space-between"
+            align="center"
+            flexWrap={"wrap"}
+            justifyContent={"space-around"}
+          >
             <Box flex="0 0 50%">
-              <Link href="https://github.com/anuraghazra/github-readme-stats">
+              <Link href="https://github.com/iamprazol">
                 <Image
                   align="center"
                   src="https://github-readme-stats.vercel.app/api?username=iamprazol&count_private=true&show_icons=true&include_all_commits=true&line_height=24&theme=gruvbox"
@@ -140,7 +145,15 @@ const About = () => {
               </Link>
             </Box>
             <Box flex="0 0 50%">
-              <Link href="https://github.com/anuraghazra/github-readme-stats">
+              <Link href="https://github.com/iamprazol">
+                <Image
+                  align="center"
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=iamprazol&theme=gruvbox"
+                />
+              </Link>
+            </Box>
+            <Box flex="0 0 50%" mt={10}>
+              <Link href="https://github.com/iamprazol">
                 <Image
                   align="center"
                   src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamprazol&theme=gruvbox&layout=compact&langs_count=8"

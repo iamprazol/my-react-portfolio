@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import monkeeeImage from "../../images/monkeee.png";
 import foodApiImage from "../../images/food-api.jpeg";
+import BloodBank from "../../images/blood.jpg";
 import foodFrontImage from "../../images/food-front.jpeg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -134,7 +135,7 @@ const Portfolio = () => {
             </Flex>
           </Flex>
           <Box flex="0 0 45%">
-            <Image src={foodApiImage} height="280px" borderRadius="20px" />
+            <Image src={monkeeeImage} height="280px" borderRadius="20px" />
           </Box>
         </Box>
         <Box
@@ -144,7 +145,7 @@ const Portfolio = () => {
           justifyContent="space-between"
         >
           <Box flex="0 0 45%">
-            <Image src={foodApiImage} height="280px" borderRadius="20px" />
+            <Image src={BloodBank} height="280px" borderRadius="20px" />
           </Box>
           <Flex flex="0 0 45%" direction="column" align="flex-start">
             <Flex direction="column" gap="20px">

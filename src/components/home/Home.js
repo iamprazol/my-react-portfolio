@@ -50,11 +50,11 @@ const Home = () => {
           </Heading>
         </Flex>
         <Text color="white" mt={5} lineHeight={2}>
-          I'm Prajjwal Poudel - A tech enthusiast 👨‍💻👨‍💻 working with hands on
-          experience with core PHP, Laravel, Rest API's, js, jQuery and React. I
-          am also involved into development and maintenance of WordPress
-          plugins, that have a huge user base and great WordPress ecosystem
-          impact: UserRegistration, Everest Forms.
+          I'm Prajjwal Poudel, a tech enthusiast 👨‍💻👨‍💻 who has practical
+          expertise with React, Laravel, core PHP, and jQuery. Additionally, I
+          work on the creation and upkeep of WordPress plugins with a
+          significant user base and positive effects on the WordPress ecosystem:
+          Everest Forms, UserRegistration
         </Text>
         <Stack direction="row" spacing={4} mt={5} alignItems={"center"}>
           <Button
@@ -82,34 +82,34 @@ const Home = () => {
               <ModalBody>
                 <Flex direction="column">
                   <Text mt={5} lineHeight={2}>
-                    I am currently working as Senior PHP Developer cum WordPress
-                    Plugin Developer ( Team Lead ) for two WordPress Pluginsi.e
-                    User Registration and Everest Forms at ThemeGrill Pvt. Ltd
-                    located at Nepal. All the decision regarding both the
-                    plugins are made by me.
+                    At ThemeGrill Pvt. Ltd in Nepal, I am currently working as
+                    Senior PHP Developer and WordPress Plugin Developer (Team
+                    Lead) on two WordPress Plugins, User Registration and
+                    Everest Forms. I am solely responsible for all decisions
+                    relating to both plugins.
                   </Text>
                   <Text mt={5} lineHeight={2}>
-                    Before joining ThemeGrill i was working as a Laravel
-                    developer at infomax Pvt. Ltd During my time there i was
-                    working on projects that didnot make it up to the market and
-                    teaching new aspirants was also my job there, so it was more
-                    of a teaching job.
+                    I was employed as a Laravel developer at infomax Pvt. Ltd.
+                    prior to joining ThemeGrill. It was more of a teaching
+                    position during my tenure there because I worked on projects
+                    that were never released to the public and also had the
+                    responsibility of training new employees.
                   </Text>
                   <Text mt={5} lineHeight={2}>
-                    Before that i was working as a freelancer and developing web
-                    API's for mobile applications using Laravel. Most of the
-                    projects didn't make it up to the market, some did but
-                    couldnot keep up with it.
+                    Prior to that, I was working as a freelancer and using
+                    Laravel to create web APIs for mobile applications. The
+                    majority of the ventures failed to reach the market; those
+                    that did could not maintain their level of success.
                   </Text>
                   <Text mt={5} lineHeight={2}>
-                    Describing myself, i am more of a Backend Developer mainly
-                    focused in PHP that said i am also confident in frontend
-                    development technologies also.
+                    I would classify myself as more of a backend developer, with
+                    a primary focus on PHP, while I am equally comfortable with
+                    frontend development technologies.
                   </Text>
                   <Text mt={5} lineHeight={2}>
-                    Aside from technical aspect i am more of a movies, series
-                    and animes loving person and would like to watch them when i
-                    get free. So thats all about me.
+                    Aside from technical matters, I enjoy watching movies,
+                    television shows, and animes whenever I have time. So that's
+                    all there is to know about me.
                   </Text>
                 </Flex>
               </ModalBody>

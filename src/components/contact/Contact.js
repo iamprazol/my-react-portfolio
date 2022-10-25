@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import {
   Box,
   Heading,
@@ -6,11 +6,13 @@ import {
   Stack,
   Text,
   Link,
-  FormControl,
   Input,
   Textarea,
   Button,
+  useToast,
 } from "@chakra-ui/react";
+import emailjs from "@emailjs/browser";
+import USER_DATA from "../helper/emailkey";
 
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import MapIcon from "@mui/icons-material/Map";
@@ -22,6 +24,43 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import SendIcon from "@mui/icons-material/Send";
 
 const Contact = () => {
+  const form = useRef();
+  const toast = useToast();
+  const [sendingMessage, setSendingMessage] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents default refresh by the browser
+    setSendingMessage(true);
+
+    emailjs
+      .sendForm(
+        USER_DATA.SERVICE_ID,
+        USER_DATA.TEMPLATE_ID,
+        form.current,
+        USER_DATA.USER_ID
+      )
+      .then(
+        (result) => {
+          toast({
+            title: `Message Sent`,
+            status: "success",
+            description: "We will get back to you shortly.",
+            isClosable: true,
+          });
+
+          setSendingMessage(false);
+        },
+        (error) => {
+          toast({
+            title: `Message Couldn't be Sent`,
+            status: "error",
+            description: "An error occurred, Please try again.",
+            isClosable: true,
+          });
+          setSendingMessage(false);
+        }
+      );
+  };
   return (
     <Stack flex="1" paddingLeft="150px">
       <Flex direction="column" gap="120px">
@@ -132,7 +171,7 @@ const Contact = () => {
               </Flex>
             </Box>
             <Box flex="0 0 60%">
-              <FormControl>
+              <form ref={form} onSubmit={handleSubmit}>
                 <Flex direction="column" gap={8}>
                   <Flex justify="space-between">
                     <Input
@@ -144,6 +183,7 @@ const Contact = () => {
                       background="#2b2a2a"
                       border="none"
                       color="white"
+                      name="user_name"
                     />
                     <Input
                       flex="0 0 48%"
@@ -154,6 +194,7 @@ const Contact = () => {
                       background="#2b2a2a"
                       border="none"
                       color="white"
+                      name="user_email"
                     />
                   </Flex>
                   <Input
@@ -174,9 +215,11 @@ const Contact = () => {
                     background="#2b2a2a"
                     border="none"
                     color="white"
+                    name={"message"}
                   />
                 </Flex>
                 <Button
+                  isLoading={sendingMessage}
                   mt={10}
                   borderRadius="20px"
                   color="#ffb400"
@@ -186,10 +229,13 @@ const Contact = () => {
                   borderColor="#ffb400"
                   variant="outline"
                   rightIcon={<SendIcon />}
+                  type={"submit"}
+                  loadingText="Sending"
+                  spinnerPlacement="start"
                 >
                   SEND MESSAGE
                 </Button>
-              </FormControl>
+              </form>
             </Box>
           </Flex>
         </Box>
