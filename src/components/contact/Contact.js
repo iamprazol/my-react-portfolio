@@ -113,7 +113,7 @@ const Contact = () => {
                 style={{
                   opacity: 0.8,
                   fontSize:
-                    useWindowDimensions().width > "425" ? "16px" : "14px",
+                    useWindowDimensions().width > "425" ? "16px" : "12px",
                 }}
               >
                 Feel free to get in touch with me. I am always open to
@@ -126,7 +126,7 @@ const Contact = () => {
                   <Flex direction="column" ml={4}>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
@@ -135,7 +135,7 @@ const Contact = () => {
                     </Text>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="500"
                     >
@@ -150,7 +150,7 @@ const Contact = () => {
                   <Flex direction="column" ml={4}>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
@@ -159,7 +159,7 @@ const Contact = () => {
                     </Text>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="500"
                     >
@@ -174,7 +174,7 @@ const Contact = () => {
                   <Flex direction="column" ml={4}>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="400"
                       style={{ opacity: 0.8 }}
@@ -183,7 +183,7 @@ const Contact = () => {
                     </Text>
                     <Text
                       fontSize={
-                        useWindowDimensions().width > "425" ? "16px" : "14px"
+                        useWindowDimensions().width > "425" ? "16px" : "12px"
                       }
                       fontWeight="500"
                     >

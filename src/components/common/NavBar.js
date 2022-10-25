@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import CottageIcon from "@mui/icons-material/Cottage";
@@ -9,6 +9,13 @@ import IconContainer from "./IconContainer";
 
 const NavBar = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("home");
+
+  useEffect(() => {
+    var parts = window.location.href.split("/");
+    var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+
+    setActiveMenuItem(lastSegment);
+  }, []);
 
   return (
     <Flex

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Heading,
@@ -69,7 +69,7 @@ const About = () => {
           </Heading>
           <span
             style={{
-              fontSize: "110px",
+              fontSize: useWindowDimensions().width > "425" ? "110px" : "50px",
               letterSpacing: "10px",
               lineHeight: "0.7",
               position: "absolute",
@@ -124,16 +124,21 @@ const About = () => {
               justify="space-between"
               align="center"
               gap={{
-                base: "100px",
+                base: "20px",
                 "2xl": "0px",
                 xl: "0px",
                 lg: "0px",
                 md: "100px",
-                sm: "100px",
+                sm: "50px",
               }}
             >
               <Flex direction="column">
-                <Text fontWeight="500" fontSize="15px">
+                <Text
+                  fontWeight="500"
+                  fontSize={
+                    useWindowDimensions().width > "425" ? "16px" : "12px"
+                  }
+                >
                   <List spacing={5}>
                     <ListItem>
                       <span style={{ opacity: 0.8 }}>First Name:</span> Prajjwal
@@ -152,7 +157,12 @@ const About = () => {
                 </Text>
               </Flex>
               <Flex direction="column">
-                <Text fontWeight="500" fontSize="15px">
+                <Text
+                  fontWeight="500"
+                  fontSize={
+                    useWindowDimensions().width > "425" ? "16px" : "12px"
+                  }
+                >
                   <List spacing={5}>
                     <ListItem>
                       <span style={{ opacity: 0.8 }}>Last Name:</span> Poudel
@@ -186,7 +196,10 @@ const About = () => {
                 p={8}
                 mr={8}
               >
-                <Heading size="3xl" color="#ffb400">
+                <Heading
+                  size={useWindowDimensions().width > "425" ? "3xk" : "xl"}
+                  color="#ffb400"
+                >
                   4<Text as="sup">+</Text>
                 </Heading>
                 <Text fontWeight="500">- YEARS OF EXPERIENCE</Text>
@@ -201,7 +214,10 @@ const About = () => {
                 flexDirection="column"
                 p={8}
               >
-                <Heading size="3xl" color="#ffb400">
+                <Heading
+                  size={useWindowDimensions().width > "425" ? "3xk" : "xl"}
+                  color="#ffb400"
+                >
                   17<Text as="sup">+</Text>
                 </Heading>
                 <Text fontWeight="500">- PERSONAL PROJECTS </Text>
@@ -311,7 +327,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2019 - PRESENT" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         WP PLUGIN TEAM LEAD -
                       </Heading>
                       <Heading
@@ -325,7 +348,11 @@ const About = () => {
                     </Flex>
                     <UnorderedList
                       spacing={2}
-                      style={{ opacity: 0.8, fontSize: "14px" }}
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
                       color="white"
                     >
                       <ListItem>
@@ -364,7 +391,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2019 - 2020" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         WP PLUGIN DEVELOPER -
                       </Heading>
                       <Heading
@@ -378,7 +412,11 @@ const About = () => {
                     </Flex>
                     <UnorderedList
                       spacing={2}
-                      style={{ opacity: 0.8, fontSize: "14px" }}
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
                       color="white"
                     >
                       <ListItem>
@@ -414,7 +452,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2018 - 2019" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         PHP WEB DEVELOPER -
                       </Heading>
                       <Heading
@@ -428,7 +473,11 @@ const About = () => {
                     </Flex>
                     <UnorderedList
                       spacing={2}
-                      style={{ opacity: 0.8, fontSize: "14px" }}
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
                       color="white"
                     >
                       <ListItem>
@@ -473,7 +522,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2015 - 2019" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         BACHLEORS IN COMPUTER ENGINEERING -
                       </Heading>
                       <Heading
@@ -485,7 +541,13 @@ const About = () => {
                         WRC
                       </Heading>
                     </Flex>
-                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
+                    <Text
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
+                    >
                       From Western Regional Campus ( Pashchimanchal Engineering
                       Campus ), Lamachaur-16, Pokhara, I completed my Bachleor
                       in computer engineering degree.
@@ -510,7 +572,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2013 - 2015" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         HIGHER SECONDARY -
                       </Heading>
                       <Heading
@@ -522,7 +591,13 @@ const About = () => {
                         AROMA
                       </Heading>
                     </Flex>
-                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
+                    <Text
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
+                    >
                       From Aroma College Of Applied Science And Management,
                       Bharatpur-10, Chitwan, I completed my Higher secondary
                       degree.
@@ -547,7 +622,14 @@ const About = () => {
                   <Flex direction="column" flex="0 0 90%">
                     <TimeLineBadge badgeText="2001 - 2012" />
                     <Flex align="baseline">
-                      <Heading fontSize="18px" fontWeight="500" mt={2} mb={2}>
+                      <Heading
+                        fontSize={
+                          useWindowDimensions().width > "425" ? "18px" : "14px"
+                        }
+                        fontWeight="500"
+                        mt={2}
+                        mb={2}
+                      >
                         PRIMARY -
                       </Heading>
                       <Heading
@@ -559,7 +641,13 @@ const About = () => {
                         HILL BIRD
                       </Heading>
                     </Flex>
-                    <Text style={{ opacity: 0.8, fontSize: "14px" }}>
+                    <Text
+                      style={{
+                        opacity: 0.8,
+                        fontSize:
+                          useWindowDimensions().width > "425" ? "14px" : "10px",
+                      }}
+                    >
                       From Hill Bird, Bharatpur-12, Chitwan, I completed my
                       primary education degree.
                     </Text>

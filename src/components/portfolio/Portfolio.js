@@ -6,26 +6,29 @@ import {
   Stack,
   Text,
   Image,
-  Link,
   Button,
 } from "@chakra-ui/react";
 import monkeeeImage from "../../images/monkeee.png";
-import foodApiImage from "../../images/food-api.jpeg";
 import BloodBank from "../../images/blood.jpg";
-import foodFrontImage from "../../images/food-front.jpeg";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import useWindowDimensions from "../helper/useWindowDimensions";
 
 const Portfolio = () => {
   return (
-    <Stack flex="1" paddingLeft="150px">
+    <Stack flex="1" paddingLeft={{ base: "0px", lg: "150px" }}>
       <Flex direction="column" gap="120px">
         <Box display="flex" marginTop="70px" justifyContent="center">
-          <Heading size="3xl" color="white" fontWeight="800" lineHeight={0.1}>
+          <Heading
+            size={useWindowDimensions().width > "425" ? "3xl" : "xl"}
+            color="white"
+            fontWeight="800"
+            lineHeight={0.1}
+          >
             PORT<span style={{ color: "#ffb400" }}>FOLIO</span>
           </Heading>
           <span
             style={{
-              fontSize: "110px",
+              fontSize: useWindowDimensions().width > "425" ? "110px" : "50px",
               letterSpacing: "10px",
               lineHeight: "0.7",
               position: "absolute",
@@ -42,12 +45,43 @@ const Portfolio = () => {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
+          border="4px solid #252525"
+          padding="40px"
+          borderRadius="30px"
+          flexDirection={{
+            base: "column",
+            "2xl": "row",
+            xl: "row",
+            lg: "column",
+            md: "column",
+            sm: "column",
+          }}
         >
-          <Flex flex="0 0 45%" direction="column" align="flex-start">
-            <Flex direction="column" gap="20px">
-              <Box display="flex" marginTop="70px" alignItems="center">
+          <Box flex="0 0 30%">
+            <Image src={monkeeeImage} height="280px" borderRadius="20px" />
+          </Box>
+          <Flex flex="0 0 65%" direction="column" align="flex-start">
+            <Flex
+              flexDirection={{
+                base: "row",
+                "2xl": "column",
+                xl: "column",
+                lg: "row",
+                md: "row",
+                sm: "row",
+              }}
+              gap={10}
+            >
+              <Box
+                display="flex"
+                marginTop="70px"
+                alignItems="center"
+                flex="0 0 25%"
+              >
                 <Text
-                  fontSize="30px"
+                  fontSize={
+                    useWindowDimensions().width > 1024 ? "30px" : "20px"
+                  }
                   color="white"
                   lineHeight={0.1}
                   style={{
@@ -59,7 +93,8 @@ const Portfolio = () => {
                 </Text>
                 <span
                   style={{
-                    fontSize: "7rem",
+                    fontSize:
+                      useWindowDimensions().width > 1024 ? "7rem" : "5rem",
                     letterSpacing: "10px",
                     lineHeight: "0.7",
                     position: "absolute",
@@ -82,76 +117,101 @@ const Portfolio = () => {
                 enter datas about suburbs, clubs and events. <br />I also used
                 this api to create a web version of Monkeee.
               </Text>
-              <Flex justify="start">
-                <Button
-                  mt={10}
-                  borderRadius="20px"
-                  color="#ffb400"
-                  fontWeight={500}
-                  height="50px"
-                  width="35%"
-                  borderColor="#ffb400"
-                  variant="outline"
-                  leftIcon={
-                    <GitHubIcon
-                      style={{ color: "whitesmoke", fontSize: "35px" }}
-                    />
-                  }
-                  onClick={() =>
-                    window.open(
-                      "https://github.com/iamprazol/monkeee-backend-api",
-                      "_blank"
-                    )
-                  }
-                  mr={5}
-                >
-                  VISIT API REPO
-                </Button>
-                <Button
-                  mt={10}
-                  borderRadius="20px"
-                  color="#ffb400"
-                  fontWeight={500}
-                  height="50px"
-                  width="35%"
-                  borderColor="#ffb400"
-                  variant="outline"
-                  leftIcon={
-                    <GitHubIcon
-                      style={{ color: "whitesmoke", fontSize: "35px" }}
-                    />
-                  }
-                  onClick={() =>
-                    window.open(
-                      "https://github.com/iamprazol/monkeee-front",
-                      "_blank"
-                    )
-                  }
-                  mr={5}
-                >
-                  VISIT WEB REPO
-                </Button>
-              </Flex>
+            </Flex>
+            <Flex justify="end" width="100%">
+              <Button
+                width="50%"
+                mt={10}
+                borderRadius="20px"
+                color="#ffb400"
+                fontWeight={500}
+                height="50px"
+                borderColor="#ffb400"
+                variant="outline"
+                leftIcon={
+                  <GitHubIcon
+                    style={{ color: "whitesmoke", fontSize: "35px" }}
+                  />
+                }
+                onClick={() =>
+                  window.open(
+                    "https://github.com/iamprazol/monkeee-backend-api",
+                    "_blank"
+                  )
+                }
+                mr={5}
+              >
+                VISIT API REPO
+              </Button>
+              <Button
+                width="50%"
+                mt={10}
+                borderRadius="20px"
+                color="#ffb400"
+                fontWeight={500}
+                height="50px"
+                borderColor="#ffb400"
+                variant="outline"
+                leftIcon={
+                  <GitHubIcon
+                    style={{ color: "whitesmoke", fontSize: "35px" }}
+                  />
+                }
+                onClick={() =>
+                  window.open(
+                    "https://github.com/iamprazol/monkeee-front",
+                    "_blank"
+                  )
+                }
+                mr={5}
+              >
+                VISIT WEB REPO
+              </Button>
             </Flex>
           </Flex>
-          <Box flex="0 0 45%">
-            <Image src={monkeeeImage} height="280px" borderRadius="20px" />
-          </Box>
         </Box>
         <Box
           flex="0 0 45%"
           display="flex"
           alignItems="center"
           justifyContent="space-between"
+          border="4px solid #252525"
+          padding="40px"
+          borderRadius="30px"
+          flexDirection={{
+            base: "column",
+            "2xl": "row",
+            xl: "row",
+            lg: "column",
+            md: "column",
+            sm: "column",
+          }}
         >
-          <Box flex="0 0 45%">
+          <Box flex="0 0 30%">
             <Image src={BloodBank} height="280px" borderRadius="20px" />
           </Box>
-          <Flex flex="0 0 45%" direction="column" align="flex-start">
-            <Flex direction="column" gap="20px">
-              <Box display="flex" marginTop="70px" alignItems="center">
+          <Flex flex="0 0 65%" direction="column" align="flex-start">
+            <Flex
+              flexDirection={{
+                base: "row",
+                "2xl": "column",
+                xl: "column",
+                lg: "row",
+                md: "row",
+                sm: "row",
+              }}
+              gap={10}
+            >
+              <Box
+                display="flex"
+                marginTop="70px"
+                alignItems="center"
+                flex="0 0 25%"
+              >
                 <Text
-                  fontSize="30px"
+                  fontSize={
+                    useWindowDimensions().width > 1024 ? "30px" : "20px"
+                  }
                   color="white"
                   lineHeight={0.1}
                   style={{
@@ -163,7 +223,8 @@ const Portfolio = () => {
                 </Text>
                 <span
                   style={{
-                    fontSize: "7rem",
+                    fontSize:
+                      useWindowDimensions().width > 1024 ? "7rem" : "5rem",
                     letterSpacing: "10px",
                     lineHeight: "0.7",
                     position: "absolute",
@@ -185,6 +246,8 @@ const Portfolio = () => {
                 The main feature was notifying donors through email when there
                 was a blood request posted, 5km area range around them.
               </Text>
+            </Flex>
+            <Flex justify="end" width="100%">
               <Button
                 mt={10}
                 borderRadius="20px"
