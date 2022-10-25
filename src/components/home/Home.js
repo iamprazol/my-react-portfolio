@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import {
   Flex,
   Heading,
@@ -17,34 +17,58 @@ import {
   ModalBody,
   ModalFooter,
 } from "@chakra-ui/react";
-import { ArrowForwardIcon, ViewIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import myPic from "../../me.png";
+import useWindowDimensions from "../helper/useWindowDimensions";
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const DisplayPicture = () => {
+    return (
+      <Flex direction="column" flex="0 0 35%">
+        <Box
+          height="calc(100vh - 80px)"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={myPic}
+            zIndex={1}
+            style={{ boxShadow: "0 0 7px rgb(0 0 0 / 90%)" }}
+            height={useWindowDimensions().width <= "768" && "200px"}
+            width={useWindowDimensions().width <= "768" && "150px"}
+            border={useWindowDimensions().width <= "768" && "5px solid #252525"}
+            borderRadius={"30px"}
+          />
+        </Box>
+      </Flex>
+    );
+  };
+
   return (
-    <Fragment>
+    <Fragment gap={{ base: "0px", lg: "50px" }}>
+      {useWindowDimensions().width <= "768" && <DisplayPicture />}
       <Flex
         direction="column"
         flex="1"
-        padding="0px 90px 0px 100px"
+        padding={useWindowDimensions().width > "768" && "0px 90px 0px 100px"}
         minHeight="90vh"
         justify="center"
       >
         <Flex alignItems="center">
-          <span
-            style={{
-              content: "",
-              height: "6px",
-              width: "60px",
-              borderRadius: "10px",
-              background: "gold",
-              marginRight: "30px",
-              marginBottom: "35px",
+          <Heading
+            color="gold"
+            fontSize={{
+              base: "lg",
+              "2xl": "4xl",
+              xl: "3xl",
+              lg: "2xl",
+              md: "xl",
+              sm: "lg",
             }}
-          ></span>
-          <Heading color="gold" size="2xl">
+          >
             I'M PRAJJWAL POUDEL.
             <span style={{ color: "white" }}> WEB DEVELOPER</span>
           </Heading>
@@ -135,27 +159,20 @@ const Home = () => {
           </Modal>
         </Stack>
       </Flex>
-      <Flex direction="column" flex="0 0 35%">
-        <Box height="calc(100vh - 80px)" display="flex" alignItems="center">
-          <Image
-            src={myPic}
-            borderRadius="30px"
-            zIndex={1}
-            style={{ boxShadow: "0 0 7px rgb(0 0 0 / 90%)" }}
-          />
-        </Box>
-      </Flex>
-      <span
-        style={{
-          position: "fixed",
-          height: "200%",
-          width: "100%",
-          transform: "rotate(15deg)",
-          right: "-83%",
-          top: "-50%",
-          background: "#ffb400",
-        }}
-      ></span>
+      {useWindowDimensions().width > "768" && <DisplayPicture />}
+      {useWindowDimensions().width > "768" && (
+        <span
+          style={{
+            position: "fixed",
+            height: "200%",
+            width: "100%",
+            transform: "rotate(15deg)",
+            right: "-83%",
+            top: "-50%",
+            background: "#ffb400",
+          }}
+        ></span>
+      )}
     </Fragment>
   );
 };

@@ -18,6 +18,21 @@ function App() {
         padding="30px"
         align="center"
         background="#111"
+        gap={{
+          base: "25px 0px",
+          "2xl": "150px",
+          lg: "25px 0px",
+          md: "25px 0px",
+          sm: "25px 0px",
+        }}
+        direction={{
+          base: "column",
+          "2xl": "row",
+          xl: "row",
+          lg: "row",
+          md: "column",
+          sm: "column",
+        }}
       >
         <NavBar />
         <Routes>

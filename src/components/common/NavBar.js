@@ -11,7 +11,27 @@ const NavBar = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("home");
 
   return (
-    <Flex direction="column" top="20%" position="fixed">
+    <Flex
+      direction={{
+        base: "row",
+        "2xl": "column",
+        xl: "column",
+        lg: "column",
+        md: "row",
+        sm: "row",
+      }}
+      top="20%"
+      position={activeMenuItem !== "home" ? "fixed" : ""}
+      justifyContent="space-between"
+      gap={{
+        base: "25px",
+        "2xl": "0px",
+        xl: "0px",
+        lg: "0px",
+        md: "100px",
+        sm: "100px",
+      }}
+    >
       <NavLink to="/" onClick={() => setActiveMenuItem("home")}>
         <IconContainer
           icon={<CottageIcon style={{ color: "white" }} />}
